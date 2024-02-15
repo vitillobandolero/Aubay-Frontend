@@ -9,6 +9,8 @@
                         <th>Name</th>
                         <th>Birth Date</th>
                         <th>Vulnerability</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +19,15 @@
                         <td>{{hero.name}}</td>
                         <td>{{hero.birthDate}}</td>
                         <td>{{hero.vulnerability}}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" routerLink="/heroes/create">Create</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary btn-sm" [routerLink]="['/heroes/edit', hero.id]">Edit</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="delete(hero)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-hero-form',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, RouterModule],
   templateUrl: './hero-form.component.html',
   styleUrl: './hero-form.component.css'
 })
