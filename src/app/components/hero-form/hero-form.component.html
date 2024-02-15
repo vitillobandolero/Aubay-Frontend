@@ -1,0 +1,35 @@
+<div class="card text-bg-light mb-3">
+    <div class="card-header">{{hero.id? editHero : createHero}}</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" routerLink="/heroes">Back</button>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="hero.name" id="name" />
+                <div *ngIf="error?.name" class="alert alert-danger">
+                    {{ error.name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Birth Date</label>
+                <input type="text" name="birthDate" class="form-control" [(ngModel)]="hero.birthDate" id="birthDate" />
+                <div *ngIf="error?.birthDate" class="alert alert-danger">
+                    {{ error.birthDate }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="vulnerability">Vulnerability</label>
+                <input type="text" name="vulnerability" class="form-control" [(ngModel)]="hero.vulnerability" id="vulnerability" />
+                <div *ngIf="error?.vulnerability" class="alert alert-danger">
+                    {{ error.vulnerability }}
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <button type="button" class="btn btn-secondary" (click)="hero.id? edit() : create()">
+                    {{hero.id? "Edit":"Create"}}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
